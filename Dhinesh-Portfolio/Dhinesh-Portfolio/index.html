@@ -1,0 +1,2808 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dhinesh V | Portfolio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+<style>
+
+
+:root {
+    --bg: #0a6117;
+    --bg2: #071a35;
+
+    --card: rgba(255,255,255,0.06);
+    --border: rgba(255,255,255,0.14);
+
+    --text: #f5f7ff;
+    --muted: #aab1c7;
+
+    --purple: #502197;
+    --blue: #315156;
+    --cyan: #22d3ee;
+    --green: #084896;
+    --pink: #ae6114;
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* =========================================================
+   UNIQUE AURORA BACKGROUND
+========================================================= */
+
+.aurora-background {
+    position: fixed;
+    inset: 0;
+    z-index: -10;
+    overflow: hidden;
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(139,92,246,0.20),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 80% 70%,
+            rgba(6,182,212,0.15),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #020617,
+            #06152c,
+            #071a35,
+            #020617
+        );
+}
+
+
+/* Aurora waves */
+
+.aurora {
+    position: absolute;
+    width: 100%;
+    height: 45%;
+
+    filter: blur(45px);
+
+    opacity: 0.45;
+
+    transform-origin: center;
+
+    border-radius: 50%;
+}
+
+
+.aurora.one {
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--purple),
+            var(--cyan),
+            transparent
+        );
+
+    top: -15%;
+    left: -10%;
+
+    transform: rotate(-12deg);
+
+    animation:
+        auroraOne 12s ease-in-out infinite alternate;
+}
+
+
+.aurora.two {
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--blue),
+            var(--green),
+            transparent
+        );
+
+    bottom: -15%;
+    right: -10%;
+
+    transform: rotate(15deg);
+
+    animation:
+        auroraTwo 15s ease-in-out infinite alternate;
+}
+
+
+.aurora.three {
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--pink),
+            var(--purple),
+            transparent
+        );
+
+    top: 35%;
+    left: -20%;
+
+    height: 25%;
+
+    animation:
+        auroraThree 18s ease-in-out infinite alternate;
+}
+
+
+@keyframes auroraOne {
+
+    0% {
+        transform:
+            translate(-5%, -5%)
+            rotate(-12deg)
+            scale(1);
+    }
+
+    50% {
+        transform:
+            translate(15%, 10%)
+            rotate(5deg)
+            scale(1.2);
+    }
+
+    100% {
+        transform:
+            translate(-5%, 20%)
+            rotate(-8deg)
+            scale(1);
+    }
+}
+
+
+@keyframes auroraTwo {
+
+    0% {
+        transform:
+            translate(5%, 5%)
+            rotate(15deg)
+            scale(1);
+    }
+
+    50% {
+        transform:
+            translate(-15%, -15%)
+            rotate(-5deg)
+            scale(1.3);
+    }
+
+    100% {
+        transform:
+            translate(5%, -5%)
+            rotate(10deg)
+            scale(0.9);
+    }
+}
+
+
+@keyframes auroraThree {
+
+    0% {
+        transform:
+            translateX(-10%)
+            scaleX(1);
+    }
+
+    50% {
+        transform:
+            translateX(40%)
+            scaleX(1.4);
+    }
+
+    100% {
+        transform:
+            translateX(10%)
+            scaleX(0.8);
+    }
+}
+
+
+/* =========================================================
+   FLOATING PARTICLES
+========================================================= */
+
+.particles {
+    position: absolute;
+    inset: 0;
+}
+
+
+.particle {
+    position: absolute;
+
+    width: 4px;
+    height: 4px;
+
+    border-radius: 50%;
+
+    background: var(--cyan);
+
+    box-shadow:
+        0 0 10px var(--cyan),
+        0 0 20px var(--cyan);
+
+    animation:
+        floatParticle linear infinite;
+}
+
+
+.particle:nth-child(1) {
+    left: 10%;
+    top: 20%;
+    animation-duration: 8s;
+}
+
+.particle:nth-child(2) {
+    left: 20%;
+    top: 70%;
+    animation-duration: 11s;
+}
+
+.particle:nth-child(3) {
+    left: 30%;
+    top: 40%;
+    animation-duration: 9s;
+}
+
+.particle:nth-child(4) {
+    left: 40%;
+    top: 80%;
+    animation-duration: 13s;
+}
+
+.particle:nth-child(5) {
+    left: 50%;
+    top: 25%;
+    animation-duration: 10s;
+}
+
+.particle:nth-child(6) {
+    left: 60%;
+    top: 60%;
+    animation-duration: 12s;
+}
+
+.particle:nth-child(7) {
+    left: 70%;
+    top: 30%;
+    animation-duration: 9s;
+}
+
+.particle:nth-child(8) {
+    left: 80%;
+    top: 75%;
+    animation-duration: 14s;
+}
+
+.particle:nth-child(9) {
+    left: 90%;
+    top: 45%;
+    animation-duration: 10s;
+}
+
+.particle:nth-child(10) {
+    left: 15%;
+    top: 90%;
+    animation-duration: 12s;
+}
+
+
+@keyframes floatParticle {
+
+    0% {
+        transform:
+            translateY(0)
+            scale(0.5);
+
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    50% {
+        transform:
+            translateY(-120px)
+            scale(1);
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            translateY(-250px)
+            scale(0.3);
+
+        opacity: 0;
+    }
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    z-index: 1000;
+
+    background:
+        rgba(2,6,23,0.75);
+
+    backdrop-filter: blur(18px);
+
+    border-bottom:
+        1px solid var(--border);
+}
+
+
+nav {
+    max-width: 1200px;
+
+    height: 75px;
+
+    margin: auto;
+
+    padding: 0 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.logo {
+  font-family: "Outfit", sans-serif;
+
+    font-size: 24px;
+    font-weight: 800;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--cyan),
+            var(--purple),
+            var(--green)
+        );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+
+.nav-links a {
+    color: var(--muted);
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+
+.nav-links a:hover {
+    color: var(--cyan);
+}
+
+
+.menu-btn {
+    display: none;
+
+    font-size: 25px;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   GENERAL
+========================================================= */
+
+section {
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding:
+        100px 25px;
+}
+
+
+.section-title {
+    text-align: center;
+
+    margin-bottom: 55px;
+}
+
+
+.section-title h2 {
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 40px;
+
+    margin-bottom: 10px;
+}
+
+
+.section-title span {
+    color: var(--cyan);
+}
+
+
+.section-title p {
+    color: var(--muted);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+#home {
+    min-height: 100vh;
+
+    display: grid;
+
+    grid-template-columns:
+        1.2fr 0.8fr;
+
+    align-items: center;
+
+    gap: 60px;
+
+    padding-top: 130px;
+}
+
+
+.hero-text small {
+    color: var(--cyan);
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+
+.hero-text h1 {
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size:
+        clamp(45px, 7vw, 75px);
+
+    line-height: 1.05;
+
+    margin: 15px 0;
+}
+
+
+.hero-text h1 span {
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--cyan),
+            var(--purple),
+            var(--pink)
+        );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+.typing-text {
+    font-size: 22px;
+
+    color: var(--muted);
+
+    min-height: 35px;
+}
+
+
+.hero-text p {
+    margin-top: 20px;
+
+    color: var(--muted);
+
+    line-height: 1.8;
+
+    max-width: 650px;
+}
+
+
+.hero-buttons {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 15px;
+
+    margin-top: 30px;
+}
+
+
+.btn {
+    padding:
+        13px 22px;
+
+    border-radius: 10px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    font-weight: 700;
+
+    font-size: 14px;
+
+    border:
+        1px solid var(--border);
+
+    transition: 0.3s;
+}
+
+
+.btn-primary {
+    background:
+        linear-gradient(
+            135deg,
+            var(--purple),
+            var(--blue)
+        );
+}
+
+
+.btn-outline {
+    background:
+        rgba(255,255,255,0.04);
+}
+
+
+.btn:hover {
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+        0 15px 35px
+        rgba(0,0,0,0.3);
+}
+
+
+/* =========================================================
+   PROFILE
+========================================================= */
+
+.profile-container {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+
+.profile-wrapper {
+    position: relative;
+
+    width: 350px;
+    height: 350px;
+
+    transition: transform 0.2s ease;
+}
+
+
+/* NO ROTATION */
+
+.profile-ring {
+    width: 350px;
+    height: 350px;
+
+    padding: 7px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--cyan),
+            var(--purple),
+            var(--pink),
+            var(--green)
+        );
+
+    box-shadow:
+        0 0 25px
+        rgba(34,211,238,0.3),
+
+        0 0 60px
+        rgba(139,92,246,0.2);
+
+    animation:
+        profileGlow 3s ease-in-out infinite alternate;
+}
+
+
+.profile-ring img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border:
+        5px solid var(--bg);
+
+    /* IMPORTANT:
+       Image does not rotate */
+}
+
+
+@keyframes profileGlow {
+
+    from {
+        box-shadow:
+            0 0 20px
+            rgba(34,211,238,0.25);
+    }
+
+    to {
+        box-shadow:
+            0 0 45px
+            rgba(139,92,246,0.55);
+    }
+}
+
+
+/* =========================================================
+   CARDS
+========================================================= */
+
+.about-grid {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 30px;
+}
+
+
+.about-card {
+    background:
+        var(--card);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 20px;
+
+    padding: 35px;
+
+    backdrop-filter:
+        blur(15px);
+}
+
+
+.about-card h3 {
+    margin-bottom: 15px;
+
+    font-size: 25px;
+}
+
+
+.about-card p {
+    color: var(--muted);
+
+    line-height: 1.8;
+}
+
+
+.contact-info {
+    margin-top: 25px;
+}
+
+
+.contact-info div {
+    display: flex;
+
+    gap: 12px;
+
+    align-items: center;
+
+    margin: 15px 0;
+
+    color: var(--muted);
+}
+
+
+.contact-info i {
+    color: var(--cyan);
+
+    width: 20px;
+}
+
+
+/* =========================================================
+   TECHNOLOGY
+========================================================= */
+
+.tech-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap: 20px;
+}
+
+
+.tech-card {
+    text-align: center;
+
+    background:
+        var(--card);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 18px;
+
+    padding: 30px 15px;
+
+    backdrop-filter:
+        blur(12px);
+
+    transition:
+        0.35s;
+}
+
+
+.tech-card:hover {
+    transform:
+        translateY(-8px);
+
+    border-color:
+        var(--cyan);
+
+    box-shadow:
+        0 15px 35px
+        rgba(6,182,212,0.15);
+}
+
+
+.tech-card i {
+    font-size: 40px;
+
+    margin-bottom: 15px;
+
+    color: var(--cyan);
+}
+
+
+.tech-card h4 {
+    margin-bottom: 8px;
+}
+
+
+.tech-card p {
+    color: var(--muted);
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   SKILLS
+========================================================= */
+
+.skills-grid {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 25px;
+}
+
+
+.skill {
+    margin-bottom: 25px;
+}
+
+
+.skill-info {
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    margin-bottom: 10px;
+}
+
+
+.skill-info span:last-child {
+    color: var(--cyan);
+}
+
+
+.skill-bar {
+    height: 8px;
+
+    background:
+        rgba(255,255,255,0.08);
+
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+
+.skill-progress {
+    height: 100%;
+
+    width: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--purple),
+            var(--cyan)
+        );
+
+    border-radius: 20px;
+
+    transition:
+        width 1.5s ease;
+}
+
+
+/* =========================================================
+   PROJECTS
+========================================================= */
+
+.projects-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap: 25px;
+}
+
+
+.project-card {
+    background:
+        var(--card);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 20px;
+
+    padding: 30px;
+
+    backdrop-filter:
+        blur(15px);
+
+    transition:
+        0.35s;
+}
+
+
+.project-card:hover {
+    transform:
+        translateY(-8px);
+
+    border-color:
+        var(--purple);
+}
+
+
+.project-icon {
+    width: 55px;
+    height: 55px;
+
+    border-radius: 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        rgba(139,92,246,0.15);
+
+    color: var(--cyan);
+
+    font-size: 25px;
+
+    margin-bottom: 20px;
+}
+
+
+.project-card h3 {
+    margin-bottom: 12px;
+}
+
+
+.project-card p {
+    color: var(--muted);
+
+    line-height: 1.7;
+
+    font-size: 14px;
+}
+
+
+.project-link {
+    display: inline-flex;
+
+    gap: 8px;
+
+    margin-top: 20px;
+
+    color: var(--cyan);
+
+    font-weight: 700;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   CERTIFICATES
+========================================================= */
+
+.certificate-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap: 25px;
+}
+
+
+.certificate-card {
+    overflow: hidden;
+
+    background:
+        var(--card);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 18px;
+
+    transition:
+        0.3s;
+}
+
+
+.certificate-card:hover {
+    transform:
+        translateY(-7px);
+
+    border-color:
+        var(--cyan);
+}
+
+
+.certificate-card img {
+    width: 100%;
+
+    height: 210px;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+.certificate-content {
+    padding: 20px;
+}
+
+
+.certificate-content h3 {
+    font-size: 17px;
+
+    margin-bottom: 12px;
+}
+
+
+.certificate-content a {
+    color: var(--cyan);
+
+    font-size: 14px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   JOURNEY
+========================================================= */
+
+.timeline {
+    max-width: 800px;
+
+    margin: auto;
+
+    position: relative;
+}
+
+
+.timeline::before {
+    content: "";
+
+    position: absolute;
+
+    left: 20px;
+
+    top: 0;
+
+    bottom: 0;
+
+    width: 2px;
+
+    background:
+        linear-gradient(
+            var(--purple),
+            var(--cyan)
+        );
+}
+
+
+.timeline-item {
+    position: relative;
+
+    padding-left: 65px;
+
+    margin-bottom: 35px;
+}
+
+
+.timeline-dot {
+    position: absolute;
+
+    left: 10px;
+
+    top: 5px;
+
+    width: 22px;
+    height: 22px;
+
+    border-radius: 50%;
+
+    background:
+        var(--cyan);
+
+    box-shadow:
+        0 0 20px
+        var(--cyan);
+}
+
+
+.timeline-item h3 {
+    margin-bottom: 8px;
+}
+
+
+.timeline-item p {
+    color: var(--muted);
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact-box {
+    text-align: center;
+
+    background:
+        var(--card);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 25px;
+
+    padding: 60px 30px;
+
+    backdrop-filter:
+        blur(15px);
+}
+
+
+.contact-box h2 {
+    font-family:
+        "Space Grotesk",
+        sans-serif;
+
+    font-size: 40px;
+
+    margin-bottom: 15px;
+}
+
+
+.contact-box p {
+    color: var(--muted);
+
+    margin-bottom: 30px;
+}
+
+
+.social-links {
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 15px;
+}
+
+
+.social-link {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding:
+        12px 18px;
+
+    border-radius: 10px;
+
+    border:
+        1px solid var(--border);
+
+    background:
+        rgba(255,255,255,0.04);
+
+    transition:
+        0.3s;
+}
+
+
+.social-link:hover {
+    transform:
+        translateY(-4px);
+
+    border-color:
+        var(--cyan);
+
+    color:
+        var(--cyan);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    text-align: center;
+
+    padding: 30px 20px;
+
+    border-top:
+        1px solid var(--border);
+
+    color: var(--muted);
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   REVEAL ANIMATION
+========================================================= */
+
+.reveal {
+    opacity: 0;
+
+    transform:
+        translateY(40px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+
+.reveal.active {
+    opacity: 1;
+
+    transform:
+        translateY(0);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    #home {
+        grid-template-columns: 1fr;
+
+        text-align: center;
+    }
+
+    .hero-text p {
+        margin:
+            20px auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .profile-container {
+        order: -1;
+    }
+
+    .about-grid,
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tech-grid {
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .projects-grid,
+    .certificate-grid {
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    .nav-links {
+        position: absolute;
+
+        top: 75px;
+        left: 0;
+
+        width: 100%;
+
+        display: none;
+
+        flex-direction: column;
+
+        padding: 25px;
+
+        background:
+            rgba(2,6,23,0.96);
+
+        border-bottom:
+            1px solid var(--border);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .profile-wrapper,
+    .profile-ring {
+        width: 280px;
+        height: 280px;
+    }
+
+    .hero-text h1 {
+        font-size: 48px;
+    }
+
+    .section-title h2 {
+        font-size: 32px;
+    }
+
+    .tech-grid,
+    .projects-grid,
+    .certificate-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     AURORA BACKGROUND
+========================================================= -->
+
+<div class="aurora-background">
+
+    <div class="aurora one"></div>
+
+    <div class="aurora two"></div>
+
+    <div class="aurora three"></div>
+
+
+    <div class="particles">
+
+        <span class="particle"></span>
+        <span class="particle"></span>
+        <span class="particle"></span>
+        <span class="particle"></span>
+        <span class="particle"></span>
+        <span class="particle"></span>
+        <span class="particle"></span>
+        <span class="particle"></span>
+        <span class="particle"></span>
+        <span class="particle"></span>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     NAVBAR
+========================================================= -->
+
+<header>
+
+<nav>
+
+    <div class="logo">
+        DHINESH V
+    </div>
+
+
+    <div class="menu-btn" id="menuBtn">
+        <i class="fas fa-bars"></i>
+    </div>
+
+
+    <ul class="nav-links" id="navLinks">
+
+        <li>
+            <a href="#home">Home</a>
+        </li>
+
+        <li>
+            <a href="#about">About</a>
+        </li>
+
+        <li>
+            <a href="#skills">Skills</a>
+        </li>
+
+        <li>
+            <a href="#certificates">Certificates</a>
+        </li>
+    </ul>
+
+</nav>
+
+</header>
+
+
+<!-- =========================================================
+     HOME
+========================================================= -->
+
+<section id="home">
+
+
+<div class="hero-text reveal">
+
+    <small>
+        Computer Science & Engineering Student
+    </small>
+
+
+    <h1>
+        Hi, I'm
+        <span>Dhinesh V</span>
+    </h1>
+
+
+    <div class="typing-text">
+        <span id="typing"></span>
+    </div>
+
+
+    <p>
+        Passionate Computer Science and Engineering student
+        interested in software development, web technologies,
+        data analytics and modern technology.
+    </p>
+
+
+    <div class="hero-buttons">
+
+        <a href="#projects"
+           class="btn btn-primary">
+
+            <i class="fas fa-code"></i>
+
+            View Projects
+
+        </a>
+
+
+        <a href="#contact"
+           class="btn btn-outline">
+
+            <i class="fas fa-envelope"></i>
+
+            Contact Me
+
+        </a>
+
+
+        <a href="assets/resume.pdf"
+           class="btn btn-outline"
+           target="_blank">
+
+            <i class="fas fa-file-pdf"></i>
+
+            Resume
+
+        </a>
+
+    </div>
+
+</div>
+
+
+
+<div class="profile-container reveal">
+
+    <div class="profile-wrapper">
+
+        <div class="profile-ring">
+
+            <img
+                src="assets/profile.png"
+                alt="Dhinesh V Profile Photo"
+            >
+
+        </div>
+
+    </div>
+
+</div>
+
+
+</section>
+
+
+<!-- =========================================================
+     ABOUT
+========================================================= -->
+
+<section id="about">
+
+<div class="section-title reveal">
+
+    <h2>
+        About <span>Me</span>
+    </h2>
+
+    <p>
+        Get to know me
+    </p>
+
+</div>
+
+
+<div class="about-grid">
+
+
+<div class="about-card reveal">
+
+    <h3>
+        Who I Am
+    </h3>
+
+    <p>
+        I am a Computer Science and Engineering student
+        with a strong interest in programming, web
+        development and software technologies.
+        I enjoy learning new technologies and building
+        practical projects.
+    </p>
+
+
+    <div class="contact-info">
+
+        <div>
+            <i class="fas fa-phone"></i>
+
+            <span>
+                +91 9566709531
+            </span>
+        </div>
+
+
+        <div>
+            <i class="fas fa-envelope"></i>
+
+            <span>
+                dhineshvaithilingam3@gmail.com
+            </span>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<div class="about-card reveal">
+
+    <h3>
+        My Focus
+    </h3>
+
+    <p>
+        My technical focus includes frontend development,
+        Java programming, C programming, Python,
+        MongoDB, GitHub and data analytics.
+        I am continuously improving my technical
+        and problem-solving skills.
+    </p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     TECHNOLOGY
+========================================================= -->
+
+<section id="technology">
+
+<div class="section-title reveal">
+
+    <h2>
+        Technology <span>Stack</span>
+    </h2>
+
+    <p>
+        Technologies I work with
+    </p>
+
+</div>
+
+
+<div class="tech-grid">
+
+
+<div class="tech-card reveal">
+
+    <i class="fab fa-html5"></i>
+
+    <h4>HTML5</h4>
+
+    <p>
+        Web structure and semantic HTML
+    </p>
+
+</div>
+
+
+
+<div class="tech-card reveal">
+
+    <i class="fab fa-css3-alt"></i>
+
+    <h4>CSS3</h4>
+
+    <p>
+        Responsive design and animations
+    </p>
+
+</div>
+
+
+
+<div class="tech-card reveal">
+
+    <i class="fab fa-js"></i>
+
+    <h4>JavaScript</h4>
+
+    <p>
+        Interactive web applications
+    </p>
+
+</div>
+
+
+
+<div class="tech-card reveal">
+
+    <i class="fab fa-java"></i>
+
+    <h4>Java</h4>
+
+    <p>
+        Programming and application development
+    </p>
+
+</div>
+
+
+
+<div class="tech-card reveal">
+
+    <i class="fas fa-code"></i>
+
+    <h4>C Programming</h4>
+
+    <p>
+        Programming and problem solving
+    </p>
+
+</div>
+
+
+
+<div class="tech-card reveal">
+
+    <i class="fab fa-python"></i>
+
+    <h4>Python</h4>
+
+    <p>
+        Programming and data analysis
+    </p>
+
+</div>
+
+
+
+<div class="tech-card reveal">
+
+    <i class="fas fa-table"></i>
+
+    <h4>Microsoft Excel</h4>
+
+    <p>
+        Data processing and analysis
+    </p>
+
+</div>
+
+
+
+<div class="tech-card reveal">
+
+    <i class="fas fa-chart-column"></i>
+
+    <h4>Power BI</h4>
+
+    <p>
+        Data visualization and dashboards
+    </p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     SKILLS
+========================================================= -->
+
+<section id="skills">
+
+<div class="section-title reveal">
+
+    <h2>
+        My <span>Skills</span>
+    </h2>
+
+    <p>
+        My technical skills
+    </p>
+
+</div>
+
+
+<div class="skills-grid">
+
+
+<div class="about-card reveal">
+<div class="skill">
+
+    <div class="skill-info">
+        <span>Git & GitHub</span>
+        <span>80%</span>
+    </div>
+
+    <div class="skill-bar">
+
+        <div class="skill-progress"
+             data-width="80%">
+        </div>
+
+    </div>
+
+</div>
+
+<div class="skill">
+
+    <div class="skill-info">
+        <span>HTML & CSS</span>
+        <span>90%</span>
+    </div>
+
+    <div class="skill-bar">
+
+        <div class="skill-progress"
+             data-width="90%">
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<div class="skill">
+
+    <div class="skill-info">
+        <span>JavaScript</span>
+        <span>60%</span>
+    </div>
+
+    <div class="skill-bar">
+
+        <div class="skill-progress"
+             data-width="75%">
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+</div>
+
+
+
+<div class="about-card reveal">
+<div class="skill">
+
+    <div class="skill-info">
+        <span>C Programming</span>
+        <span>65%</span>
+    </div>
+
+    <div class="skill-bar">
+
+        <div class="skill-progress"
+             data-width="65%">
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+<div class="skill">
+
+    <div class="skill-info">
+        <span>Python</span>
+        <span>75%</span>
+    </div>
+
+    <div class="skill-bar">
+
+        <div class="skill-progress"
+             data-width="75%">
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<div class="skill">
+
+    <div class="skill-info">
+        <span>Java</span>
+        <span>75%</span>
+    </div>
+
+    <div class="skill-bar">
+
+        <div class="skill-progress"
+             data-width="75%">
+        </div>
+
+    </div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     PROJECTS
+========================================================= -->
+
+<section id="projects">
+
+<div class="section-title reveal">
+
+    <h2>
+        My <span>Projects</span>
+    </h2>
+
+    <p>
+        Some of my development projects
+    </p>
+
+</div>
+
+
+<div class="projects-grid">
+
+
+<div class="project-card reveal">
+
+    <div class="project-icon">
+        <i class="fas fa-table"></i>
+    </div>
+
+    <h3>
+        Automatic Parsing Table Generator
+    </h3>
+
+    <p>
+        A parser analysis project designed to generate
+        parsing tables and visualize compiler parsing
+        concepts including FIRST, FOLLOW and parsing
+        techniques.
+    </p>
+
+    <a
+        href="https://github.com/dhinesh-33"
+        target="_blank"
+        class="project-link"
+    >
+
+        View on GitHub
+
+        <i class="fas fa-arrow-right"></i>
+
+    </a>
+
+</div>
+
+
+
+<div class="project-card reveal">
+
+    <div class="project-icon">
+        <i class="fas fa-wallet"></i>
+    </div>
+
+    <h3>
+        FinoGlass Expense Tracker
+    </h3>
+
+    <p>
+        A MERN stack personal finance management
+        application with JWT authentication,
+        expense tracking, budget management and
+        interactive dashboards.
+    </p>
+
+    <a
+        href="https://github.com/dhinesh-33"
+        target="_blank"
+        class="project-link"
+    >
+
+        View on GitHub
+
+        <i class="fas fa-arrow-right"></i>
+
+    </a>
+
+</div>
+
+
+
+<div class="project-card reveal">
+
+    <div class="project-icon">
+        <i class="fas fa-car"></i>
+    </div>
+
+    <h3>
+        Smart Online Car Rental System
+    </h3>
+
+    <p>
+        A modern car rental website designed to
+        provide users with an easy way to explore
+        cars and manage rental information.
+    </p>
+
+    <a
+        href="https://github.com/dhinesh-33/Car-rental-System"
+        target="_blank"
+        class="project-link"
+    >
+
+        View on GitHub
+
+        <i class="fas fa-arrow-right"></i>
+
+    </a>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     CERTIFICATES
+========================================================= -->
+
+<section id="certificates">
+
+<div class="section-title reveal">
+
+    <h2>
+        My <span>Certificates</span>
+    </h2>
+
+    <p>
+        Certifications and achievements
+    </p>
+
+</div>
+
+
+<div class="certificate-grid">
+
+
+<div class="certificate-card reveal">
+
+    <img
+        src="assets/certificate4.jpeg"
+        alt="AI Deep Learning And Computer Vision Workshop"
+    >
+
+    <div class="certificate-content">
+
+        <h3>
+            AI Deep Learning And Computer Vision Workshop
+        </h3>
+
+        <a
+            href="assets/certificate4.jpeg"
+            target="_blank"
+        >
+
+            View Certificate
+
+            <i class="fas fa-arrow-right"></i>
+
+        </a>
+    </div>
+
+</div>
+
+
+
+<div class="certificate-card reveal">
+
+    <img
+        src="assets/certificate1.png"
+        alt="Web Development Training"
+    >
+
+    <div class="certificate-content">
+
+        <h3>
+            Web Development Training
+        </h3>
+
+        <a
+            href="assets/certificate1.png"
+            target="_blank"
+        >
+
+            View Certificate
+
+            <i class="fas fa-arrow-right"></i>
+
+        </a>
+
+    </div>
+
+</div>
+
+
+
+<div class="certificate-card reveal">
+
+    <img
+        src="assets/certificate5.jpeg"
+        alt="Technical Quiz Contest"
+    >
+
+    <div class="certificate-content">
+
+        <h3>
+            Technical Quiz Contest
+        </h3>
+
+        <a
+            href="assets/certificate5.jpeg"
+            target="_blank"
+        >
+
+            View Certificate
+
+            <i class="fas fa-arrow-right"></i>
+
+        </a>
+    </div>
+
+</div>
+
+
+
+<div class="certificate-card reveal">
+
+    <img
+        src="assets/certificate3.jpeg"
+        alt="Web Designing Contest"
+    >
+
+    <div class="certificate-content">
+
+        <h3>
+            Web Designing Contest
+        </h3>
+
+        <a
+            href="assets/certificate3.jpeg"
+            target="_blank"
+        >
+
+            View Certificate
+
+            <i class="fas fa-arrow-right"></i>
+
+        </a>
+    </div>
+
+</div>
+
+
+
+<div class="certificate-card reveal">
+
+    <img
+        src="assets/certificate2.pdf.jpeg"
+        alt="Full Stack Development Training"
+    >
+
+    <div class="certificate-content">
+
+        <h3>
+            Full Stack Development Training
+        </h3>
+
+        <a
+            href="assets/certificate2.pdf.jpeg"
+            target="_blank"
+        >
+
+            View Certificate
+
+            <i class="fas fa-arrow-right"></i>
+
+        </a>
+    </div>
+
+</div>
+<div class="certificate-card reveal">
+
+    <img
+        src="assets/c7.png"
+        alt="Full Stack Development Training"
+    >
+
+    <div class="certificate-content">
+
+        <h3>
+            IEI Certificate
+        </h3>
+
+        <a
+            href="assets/c7.png"
+            target="_blank"
+        >
+
+            View Certificate
+
+            <i class="fas fa-arrow-right"></i>
+
+        </a>
+    </div>
+
+</div>
+<div class="certificate-card reveal">
+
+    <img
+        src="assets/NM_HCL.jpg"
+        alt="Full Stack Development Training"
+    >
+
+    <div class="certificate-content">
+
+        <h3>
+           Naan Mudhalvan Certificate(HCL)
+        </h3>
+
+        <a
+            href="assets/NM_HCL.jpg"
+            target="_blank"
+        >
+
+            View Certificate
+
+            <i class="fas fa-arrow-right"></i>
+
+        </a>
+    </div>
+
+</div>
+
+<div class="certificate-card reveal">
+
+    <img
+        src="assets/NM_IBM.jpg"
+        alt="Full Stack Development Training"
+    >
+
+    <div class="certificate-content">
+
+        <h3>
+           Naan Mudhalvan Certificate(IBM)
+        </h3>
+
+        <a
+            href="assets/NM_IBM.jpg"
+            target="_blank"
+        >
+
+            View Certificate
+
+            <i class="fas fa-arrow-right"></i>
+
+        </a>
+    </div>
+
+</div>
+
+<div class="certificate-card reveal">
+
+    <img
+        src="assets/NM_Certificate.jpg"
+        alt="Full Stack Development Training"
+    >
+
+    <div class="certificate-content">
+
+        <h3>
+           Naan Mudhalvan Certificate(Infosys Springboard)
+        </h3>
+
+        <a
+            href="assets/NM_Certificate.jpg"
+            target="_blank"
+        >
+
+            View Certificate
+
+            <i class="fas fa-arrow-right"></i>
+
+        </a>
+    </div>
+
+</div>
+
+
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     JOURNEY
+========================================================= -->
+
+<section id="journey">
+
+<div class="section-title reveal">
+
+    <h2>
+        My <span>Journey</span>
+    </h2>
+
+    <p>
+        My learning journey
+    </p>
+
+</div>
+
+
+<div class="timeline">
+
+
+<div class="timeline-item reveal">
+
+    <div class="timeline-dot"></div>
+
+    <h3>
+        Education
+    </h3>
+
+    <p>
+        Started my journey in Computer Science and
+        Engineering and developed a strong interest
+        in programming and technology.
+    </p>
+
+</div>
+
+
+
+<div class="timeline-item reveal">
+
+    <div class="timeline-dot"></div>
+
+    <h3>
+        Technical Growth
+    </h3>
+
+    <p>
+        Learned C, Java, Python, HTML, CSS, JavaScript,
+        MongoDB, Git and other modern technologies.
+    </p>
+
+</div>
+
+
+
+<div class="timeline-item reveal">
+
+    <div class="timeline-dot"></div>
+
+    <h3>
+        Projects
+    </h3>
+
+    <p>
+        Started building practical projects to improve
+        programming, web development and problem-solving
+        skills.
+    </p>
+
+</div>
+
+
+
+<div class="timeline-item reveal">
+
+    <div class="timeline-dot"></div>
+
+    <h3>
+        Future Goal
+    </h3>
+
+    <p>
+        Continue improving my technical skills and
+        become a skilled software developer.
+    </p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     CONTACT
+========================================================= -->
+
+<section id="contact">
+
+<div class="contact-box reveal">
+
+    <h2>
+        Let's
+        <span style="color:var(--cyan)">
+            Connect
+        </span>
+    </h2>
+
+    <p>
+        Feel free to connect with me through my
+        social profiles or email.
+    </p>
+
+
+    <div class="social-links">
+
+
+        <a
+            href="https://github.com/dhinesh-33"
+            target="_blank"
+            class="social-link"
+        >
+
+            <i class="fab fa-github"></i>
+
+            GitHub
+
+        </a>
+
+
+        <a
+            href="https://www.linkedin.com/in/dhinesh-v-071961308/"
+            target="_blank"
+            class="social-link"
+        >
+
+            <i class="fab fa-linkedin"></i>
+
+            LinkedIn
+
+        </a>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+    © 2026 Dhinesh V | dhineshvaithilingam3@gmail.com | +91 9566709531.
+
+</footer>
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script>
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+const menuBtn =
+    document.getElementById("menuBtn");
+
+const navLinks =
+    document.getElementById("navLinks");
+
+
+menuBtn.addEventListener(
+    "click",
+    () => {
+
+        navLinks.classList.toggle(
+            "active"
+        );
+
+    }
+);
+
+
+document
+    .querySelectorAll(".nav-links a")
+    .forEach(link => {
+
+        link.addEventListener(
+            "click",
+            () => {
+
+                navLinks.classList.remove(
+                    "active"
+                );
+
+            }
+        );
+
+    });
+
+
+
+/* =========================================================
+   TYPING EFFECT
+========================================================= */
+
+const roles = [
+
+    "Computer Science Student",
+    "Frontend Developer",
+    "Software Developer",
+    "Problem Solver",
+    "Tech Enthusiast"
+
+];
+
+
+const typing =
+    document.getElementById("typing");
+
+
+let roleIndex = 0;
+
+let charIndex = 0;
+
+let deleting = false;
+
+
+function typeEffect() {
+
+    const role =
+        roles[roleIndex];
+
+
+    if (!deleting) {
+
+        typing.textContent =
+            role.substring(
+                0,
+                charIndex + 1
+            );
+
+        charIndex++;
+
+
+        if (
+            charIndex ===
+            role.length
+        ) {
+
+            deleting = true;
+
+            setTimeout(
+                typeEffect,
+                1500
+            );
+
+            return;
+        }
+
+    } else {
+
+        typing.textContent =
+            role.substring(
+                0,
+                charIndex - 1
+            );
+
+        charIndex--;
+
+
+        if (charIndex === 0) {
+
+            deleting = false;
+
+            roleIndex =
+                (roleIndex + 1)
+                % roles.length;
+
+        }
+
+    }
+
+
+    setTimeout(
+        typeEffect,
+        deleting ? 50 : 100
+    );
+
+}
+
+
+typeEffect();
+
+
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+const revealElements =
+    document.querySelectorAll(
+        ".reveal"
+    );
+
+
+function revealOnScroll() {
+
+    const windowHeight =
+        window.innerHeight;
+
+
+    revealElements.forEach(
+        element => {
+
+            const elementTop =
+                element
+                    .getBoundingClientRect()
+                    .top;
+
+
+            if (
+                elementTop <
+                windowHeight - 100
+            ) {
+
+                element.classList.add(
+                    "active"
+                );
+
+            }
+
+        }
+    );
+
+}
+
+
+window.addEventListener(
+    "scroll",
+    revealOnScroll
+);
+
+
+revealOnScroll();
+
+
+
+/* =========================================================
+   SKILL BAR ANIMATION
+========================================================= */
+
+const skillBars =
+    document.querySelectorAll(
+        ".skill-progress"
+    );
+
+
+let skillsAnimated = false;
+
+
+function animateSkills() {
+
+    const skills =
+        document.getElementById(
+            "skills"
+        );
+
+
+    const position =
+        skills
+            .getBoundingClientRect()
+            .top;
+
+
+    if (
+        position <
+        window.innerHeight - 100
+        &&
+        !skillsAnimated
+    ) {
+
+        skillBars.forEach(
+            bar => {
+
+                bar.style.width =
+                    bar.dataset.width;
+
+            }
+        );
+
+
+        skillsAnimated = true;
+
+    }
+
+}
+
+
+window.addEventListener(
+    "scroll",
+    animateSkills
+);
+
+
+animateSkills();
+
+
+
+/* =========================================================
+   PROFILE PARALLAX
+========================================================= */
+
+const profile =
+    document.querySelector(
+        ".profile-wrapper"
+    );
+
+
+document.addEventListener(
+    "mousemove",
+    event => {
+
+        if (
+            window.innerWidth <= 900
+        ) return;
+
+
+        const x =
+            (
+                event.clientX /
+                window.innerWidth
+                - 0.5
+            ) * 12;
+
+
+        const y =
+            (
+                event.clientY /
+                window.innerHeight
+                - 0.5
+            ) * 12;
+
+
+        profile.style.transform =
+            `translate(${x}px, ${y}px)`;
+
+    }
+);
+
+
+document.addEventListener(
+    "mouseleave",
+    () => {
+
+        profile.style.transform =
+            "translate(0,0)";
+
+    }
+);
+
+</script>
+
+</body>
+</html>
+```
